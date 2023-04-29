@@ -1,0 +1,35 @@
+<template>
+    <div class="slds-box slds-theme–default">
+        <table class="slds-table slds-table_cell-buffer slds-table_bordered slds-table_striped">
+                <thead>
+                <tr class="slds-line-height_reset">
+                    <th class="" scope="col">
+                       Name
+                    </th>
+                    <th class="" scope="col">
+                        Owner Name 
+                    </th>
+                    <th class="" scope="col">
+                        Created Date
+                    </th>
+                </tr>
+            </thead>
+             <tbody>
+            <template for:each={data} for:item="acc">
+                    <tr class="slds-hint-parent" key = {data}>
+                        <td data-label="Spec File">
+                            <div class="slds-cell-wrap">{acc.Name}</div>
+                        </td>
+                        <td data-label="Spec File">
+                            <div class="slds-cell-wrap">{acc.Owner.Name}</div>
+                        </td>
+                        <td data-label="Spec File">
+                            <div class="slds-cell-wrap">{acc.CreatedDate}</div>
+                        </td>
+                    </tr>
+                </template>
+            </tbody>
+        </table>
+        <div class="slds-p-top_x-small">Note : All files are scheduled for SFTP upload</div>
+    </div>
+</template>
