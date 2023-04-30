@@ -1,0 +1,8 @@
+public class MostRecentAccount {
+	@AuraEnabled  
+    public static List<Account> mostRecentData(){
+        List<Account> accountList = [Select Id,Name,CreatedDate ,Owner.Name  from Account order by CreatedDate desc Limit 10];
+        System.debug('accountList'+accountList);
+        return accountList;
+    }	
+}
